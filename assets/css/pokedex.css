@@ -152,3 +152,59 @@
     }
 }
 
+
+
+/* Adicione isso ao seu arquivo pokedex.css */
+
+#pokemonDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+#pokemonDetails .content {
+    max-width: 600px;
+    width: 100%;
+}
+
+#pokemonDetails h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#pokemonDetails .detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    background-color: var(--bg-color); /* Use a cor de fundo do Pokémon */
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+#pokemonDetails .types .type {
+    margin: 0 0.5rem;
+}
+
+#pokemonDetails img {
+    max-width: 100%;
+    height: auto;
+}
+
+#returnButton {
+    display: inline-block;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    text-decoration: none;
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+}

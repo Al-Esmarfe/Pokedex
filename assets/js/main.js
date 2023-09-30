@@ -7,8 +7,8 @@ const limit = 10
 let offset = 0;
 
 function convertPokemonToLi(pokemon) {
-    return `
-        <li class="pokemon ${pokemon.type}">
+    return `<a href="pokemon-details.html?id=${pokemon.number}">
+        <li id="pokemon-${pokemon.number}" class="pokemon ${pokemon.type}">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
 
@@ -21,6 +21,7 @@ function convertPokemonToLi(pokemon) {
                      alt="${pokemon.name}">
             </div>
         </li>
+        </a>
     `
 }
 
@@ -51,21 +52,3 @@ loadMoreButton.addEventListener('click', () => {
 
 // Adicionando códigos
 
-pokemonList.addEventListener('click', (event) => {
-    const clickedPokemon = event.target.closest('.pokemon');
-    if (clickedPokemon) {
-        const pokemonIndex = [...pokemonList.children].indexOf(clickedPokemon);
-        const pokemon = pokemonsDetails[pokemonIndex];
-
-        // Atualize os campos do formulário com os detalhes do Pokémon clicado
-        document.getElementById('name').value = pokemon.name;
-        document.getElementById('type').value = pokemon.type;
-
-        // Exiba o formulário
-        document.getElementById('pokemonDetailsForm').style.display = 'block';
-    }
-});
-
-document.getElementById('closeForm').addEventListener('click', () => {
-    document.getElementById('pokemonDetailsForm').style.display = 'none';
-});
